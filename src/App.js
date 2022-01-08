@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { NavLink, Route, Switch, Redirect } from 'react-router-dom';
+import TodoFeature from './features/Todo';
+import AlbumFeature from './features/Album';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Header
+      <p><NavLink to="/todos" activeClassName='active-menu' >Đây là đường dẫn vào todos</NavLink></p>
+      <p><NavLink to="/albums" activeClassName='active' >Đây là đường dẫn vào albums</NavLink></p>
+      <Switch>
+        <Redirect from='/home' to='/' exact />
+        <Route path="/todo-list" component={TodoFeature} />
+        <Route path="/albums" component={AlbumFeature} />
+      </Switch>
+      Footer
     </div>
   );
 }

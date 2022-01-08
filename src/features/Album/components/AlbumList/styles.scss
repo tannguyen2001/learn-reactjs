@@ -1,0 +1,10 @@
+.album-list {
+      display: flex;
+      flex-wrap: nowrap;
+      list-style: none;
+      margin: 0 -20px;
+      padding: 0;
+      & > li {
+            padding: 0 20px;
+      }
+}

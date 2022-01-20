@@ -1,8 +1,9 @@
 .album {
       &__thumbnailUrl {
             & > img {
-                  width: 350px;
+                  width: 200px;
                   border-radius: 7px;
+                  background-size: contain;
             }
       }
       &__name {

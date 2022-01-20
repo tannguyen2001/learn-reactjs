@@ -1,15 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-DetailPage.propTypes = {
-
-};
+DetailPage.propTypes = {}
 
 function DetailPage(props) {
-      return (
-            <div>
-                  <h1>wejifgwefwehgfwejbf</h1>
-            </div>
-      );
+  return (
+    <div>
+      <h1>wejifgwefwehgfwejbf</h1>
+    </div>
+  )
 }
 
-export default DetailPage;
+export default DetailPage

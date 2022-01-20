@@ -114,7 +114,7 @@ export default function Header() {
           aria-describedby="alert-dialog-description"
         >
           <DialogActions>
-            {mode !== MODE.register && (
+            {mode === MODE.login && (
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <Register closeDialog={handleClose} />
                 <Box textAlign={'center'} marginTop={'10px'}>
@@ -125,7 +125,7 @@ export default function Header() {
               </div>
             )}
 
-            {mode !== MODE.login && (
+            {mode === MODE.register && (
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <Login closeDialog={handleClose} />
                 <Box textAlign={'center'} marginTop={'10px'}>

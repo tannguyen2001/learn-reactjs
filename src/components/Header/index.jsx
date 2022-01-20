@@ -42,12 +42,13 @@ export default function Header() {
   const loggedInUser = useSelector((state) => state.user.current)
   const isLoggedIn = !!loggedInUser.id
   const [open, setOpen] = useState(false)
-  const [mode, setMode] = useState(MODE.register)
+  const [mode, setMode] = useState(MODE.login)
   const [anchorEl, setAnchorEl] = useState(null)
   const dispatch = useDispatch()
 
   const handleClickOpen = () => {
     setOpen(true)
+    setMode(MODE.login)
   }
 
   const handleClose = () => {
@@ -114,7 +115,7 @@ export default function Header() {
           aria-describedby="alert-dialog-description"
         >
           <DialogActions>
-            {mode === MODE.login && (
+            {mode === MODE.register && (
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <Register closeDialog={handleClose} />
                 <Box textAlign={'center'} marginTop={'10px'}>
@@ -125,7 +126,7 @@ export default function Header() {
               </div>
             )}
 
-            {mode === MODE.register && (
+            {mode === MODE.login && (
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <Login closeDialog={handleClose} />
                 <Box textAlign={'center'} marginTop={'10px'}>
